@@ -730,6 +730,120 @@ count--; // Decrement by 1
         <section id="sectionF" class="code-container">
             <h2>F. Difference between Scope and Visibility</h2>
             <p>In Java, "scope" and "visibility" are related but distinct concepts that pertain to the accessibility and lifespan of variables within a program. Let's elaborate on each concept:</p>
+            <ol>
+                <li>
+                    <h3>Scope:</h3>
+                    <p><strong>Definition:</strong> Scope refers to the region of the program in which a variable is defined and can be accessed. It defines the portion of the code where a variable is valid and can be used.
+                    <br><br><strong>Levels of Scope:</strong></p>
+                    <ul>
+                        <li>
+                            <strong>Block Scope:</strong> Variables declared within a block of code (e.g., inside a set of curly braces {}) have block scope. They are only accessible within that specific block.
+                        </li>
+
+                        <li>
+                            <strong>Method/Function Scope:</strong> Variables declared within a method or function have method scope. They are accessible only within that method or function.
+                        </li>
+
+                        <li>
+                            <strong>Class Scope (Instance and Static Variables):</strong> Instance variables have class scope and are accessible throughout the class. Static variables, which belong to the class rather than instances, also have class scope.
+                        </li>
+
+                        <li>
+                            <strong>Global/Program Scope:</strong> Variables declared at the class level but outside of any method or block have global or program scope. They can be accessed throughout the entire class.
+                        </li>
+                    </ul>
+                    <h3>Example:</h3>
+                    <div class="code-container">
+                        <pre class="line-numbers"><code class="language-java" id="code9">
+public class ScopeExample {
+    // Class-level variable (class scope)
+    int globalVariable = 10;
+                            
+    public void exampleMethod() {
+        // Method-level variable (method scope)
+        int methodVariable = 5;
+                            
+        {
+            // Block-level variable (block scope)  
+            int blockVariable = 3;
+            // Accessible: methodVariable, blockVariable
+        }
+                            
+        // Accessible: methodVariable
+    }
+                            
+    // Accessible: globalVariable
+}                                             
+                        </code></pre>
+                        <div class="copy-button" onclick="copyCode('code9')">Copy</div>
+                    </div>
+                </li>
+
+                <li>
+                    <h3>Visibility:</h3>
+                    <p><strong>Definition:</strong>  Visibility, in the context of Java, refers to the access level of a variable or method from outside its class. Java provides access modifiers (public, private, protected, and default) to control the visibility of members within a class. 
+                        <br><br><strong>Access Modifiers:</strong></p>
+                    <ol>
+                        <li><strong>Public:</strong> Members with public access modifier are visible to all classes, regardless of their package or location.</li>
+                        <li><strong>Private: </strong>Members with private access modifier are visible only within the same class. They are not accessible from outside the class.</li>
+                        <li><strong>Protected:</strong>Members with protected access modifier are visible within the same class, package, and subclasses.</li>
+                        <li><strong>Default (Package-Private): </strong>Members with no explicit access modifier have default visibility, meaning they are accessible within the same package but not outside it.</li>
+                    </ol>
+                    <h3>Example: </h3>
+                    <div class="code-container">
+                        <pre class="line-numbers"><code class="language-java" id="code10">
+// File: MyClass.java
+public class MyClass {
+    // Public variable
+    public int publicVariable = 10;
+
+    // Private variable
+    private int privateVariable = 20;
+                            
+    // Protected variable
+    protected int protectedVariable = 30;
+                            
+    // Default visibility (package-private) variable
+    int defaultVariable = 40;
+                            
+    // Getter method for privateVariable
+    public int getPrivateVariable() {
+        return privateVariable;
+    }
+}
+                        </code></pre>
+                        <div class="copy-button" onclick="copyCode('code10')">Copy</div>
+                    </div>
+                    <br>
+                    <div class="code-container">
+                        <pre class="line-numbers"><code class="language-java" id="code11">
+// File: AnotherClass.java
+public class AnotherClass {
+    public static void main(String[] args) {
+        MyClass myObject = new MyClass();
+                            
+        // Accessible: publicVariable
+        System.out.println(myObject.publicVariable);
+                            
+        // Not accessible: privateVariable
+        // System.out.println(myObject.privateVariable); // Error
+                            
+        // Not accessible: protectedVariable (unless AnotherClass is a subclass of MyClass)
+        // System.out.println(myObject.protectedVariable); // Error
+                            
+        // Not accessible: defaultVariable (unless AnotherClass is in the same package as MyClass)
+        // System.out.println(myObject.defaultVariable); // Error
+                            
+        // Accessible using getter method
+        System.out.println(myObject.getPrivateVariable());
+    }
+}                                           
+                        </code></pre>
+                        <div class="copy-button" onclick="copyCode('code11')">Copy</div>
+                    </div>
+                </li>
+            </ol>
+            <p>In summary, scope deals with where a variable is valid and can be used within the program, while visibility deals with who can access the variable or method from outside its class. Understanding both concepts is crucial for designing well-organized and secure Java programs.</p>
         </section>
 
         <section id="sectionF1" class="code-container">
