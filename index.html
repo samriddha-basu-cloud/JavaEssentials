@@ -45,7 +45,7 @@
             background-size: 200% 100%;
             background-position: right bottom;
             border-radius: 25px;
-            transition: background-position 0.5s;
+            transition: background-position 1.5s;
         }
         #darkModeToggle::before {
             content: '🌙';
@@ -95,6 +95,7 @@
             content: '\1F4C4'; /* Unicode character for two paper sheets */
             margin-right: 5px;
         }
+
         .index {
             background-color: #333;
             color: #fff;
@@ -372,12 +373,202 @@
 
         <section id="sectionD" class="code-container">
             <h2>D. Java and its uses</h2>
-            <!-- Add content for section D -->
+            <h3>Java Overview:</h3>
+            <p>Java is a versatile, object-oriented, high-level programming language known for its platform independence, readability, and robustness. It was developed by James Gosling and his team at Sun Microsystems in the mid-1990s. Over the years, Java has evolved into a widely-used language in various domains, including web development, enterprise applications, mobile app development, and more.</p>
+            <p>Example of Java Code:</p>
+            <div class="code-container">
+                <pre class="line-numbers"><code class="language-java" id="code1">
+                    // Sample Java code goes here
+                    public class HelloWorld {
+                        public static void main(String[] args) {
+                            System.out.println("Hello, World!");
+                        }
+                    }
+                </code></pre>
+                <div class="copy-button" onclick="copyCode('code1')">Copy Code</div>
+            </div>
+
+            <h3>Key Features of Java:</h3>
+            <ul>
+                <li>
+                    <strong>Platform Independence:</strong>
+                    Java applications can run on any device with a Java Virtual Machine (JVM), making it platform-independent. The "Write Once, Run Anywhere" (WORA) principle is achieved by compiling Java code into bytecode, which is then executed by the JVM.
+                </li>
+
+                <li>
+                    <strong>Object-Oriented Programming:</strong>
+                    Java is built on object-oriented principles, promoting concepts like encapsulation, inheritance, and polymorphism. This approach fosters modularity, code reuse, and maintainability.
+                </li>
+
+                <li>
+                    <strong>Rich Standard Library:</strong>
+	                Java comes with a comprehensive standard library (Java API) that provides pre-built classes and methods, offering solutions for various programming tasks. This library covers everything from basic data structures to networking and GUI development.
+                </li>
+
+                <li>
+                    <strong>Memory Management:</strong>
+	                Java handles memory management automatically through a garbage collector, which deallocates memory occupied by objects that are no longer in use. This helps prevent memory leaks and simplifies memory management for developers.
+                </li>
+
+                <li>
+                    <strong>Security:</strong>
+	                Java's design emphasizes security, particularly in the context of networked environments. The JVM includes a Security Manager that helps protect systems from potentially harmful actions in Java applications.
+                </li>
+
+                <li>
+                    <strong>Multithreading:</strong>
+	                Java supports multithreading, allowing developers to create concurrent applications that can execute multiple tasks simultaneously. This is crucial for performance optimization and responsiveness in various applications.
+                </li>
+
+                <li>
+                    <strong>Portability:</strong>
+                    Java's platform independence and the availability of the JVM on a wide range of devices contribute to the portability of Java applications. Code written on one system can be easily transported and executed on another system with a compatible JVM.
+                </li>
+            </ul>
+
+            <h3>Uses of Java:</h3>
+            <ul>
+                <li>
+                    <strong>Web Development:</strong>
+	                Java is widely used for developing server-side applications, web services, and dynamic web content. Popular frameworks like Spring and JavaServer Faces (JSF) are employed in Java web development.
+                </li>
+
+                <li>
+                    <strong>Enterprise Applications:</strong>
+                    Java is a dominant language for building large-scale enterprise applications. Enterprise JavaBeans (EJB), Java Persistence API (JPA), and the Spring Framework are commonly used in this context.
+                </li>
+
+                <li>
+                    <strong>Mobile App Development:</strong>
+                    Java is used for developing Android applications. Android Studio, the official IDE for Android development, supports Java as one of the primary languages for creating Android apps.
+                </li>
+
+                <li>
+                    <strong>Desktop Applications:</strong>
+	                Java's Swing and JavaFX libraries enable the development of cross-platform desktop applications with rich graphical user interfaces (GUIs).
+                </li>
+
+                <li>
+                    <strong>Cloud Computing:</strong>
+	                Java is extensively used in cloud computing services and platforms. It provides the scalability and reliability required for cloud-based applications.
+                </li>
+
+                <li>
+                    <strong>Big Data Technologies:</strong>
+                    Java is utilized in various big data technologies and frameworks, including Apache Hadoop, Apache Spark, and Apache Flink, due to its performance and scalability.
+                </li>
+
+                <li>
+                    <strong>IoT (Internet of Things):</strong>
+	                Java's portability and adaptability make it suitable for developing applications in the IoT space, connecting devices and enabling communication between them.
+                </li>
+
+                <li>
+                    <strong>Scientific and Research Applications:</strong>
+	                Java is employed in scientific computing and research applications due to its reliability, extensive libraries, and support for numerical computing.
+                </li>
+
+            </ul>
+
+            <p>Java's versatility and strong community support have contributed to its enduring popularity across a wide range of domains, making it a language of choice for many developers and organizations.</p>
+
         </section>
 
         <section id="sectionD1" class="code-container">
             <h2>D.1. Lab work</h2>
-            <!-- Add content for section D1 -->
+            <ol>
+                <li>
+                    <h3>Compiling and Executing Java Programs:</h3>
+                    <br>
+                    <p><strong>Assessment 1:</strong> <br>
+
+                        <br><strong>Objective:</strong> To compile and execute a basic Java program.
+                        <br><strong>Task:</strong>
+                    </p>
+                        <ul>
+                            <li>
+                                Write a simple Java program that prints "Hello, World!" to the console.
+                            </li>
+                            <li>
+                                Save the file with a ".java" extension.
+                            </li>
+                            <li>
+                                Open a command prompt or terminal and navigate to the directory containing the Java file.
+                            </li>
+                            <li>
+                                Compile the program using the javac command.
+                            </li>
+                            <li>
+                                Execute the compiled program using the java command.
+                            </li>
+                        </ul>
+
+                    <p>
+                        <br>
+                        <strong>Assessment 2:</strong><br>
+                            <br><strong>Objective:</strong> To understand the use of command-line compilation and execution.
+                            <br><strong>Task:</strong>
+                    </p>
+                        <ul>
+                            <li>
+                                Create a Java program that takes two integers as input and prints their sum.
+                            </li>
+                            <li>
+                                Compile and execute the program using command-line tools.
+                            </li>
+                            <li>
+                                Test the program with different sets of integer inputs.
+                            </li>
+                        </ul>
+                </li>
+                    <br><br>
+                <li>
+                    <h3>Beginner-Friendly Questions:</h3><br>
+                    <p>
+                        <strong>Question 1:</strong> <br>
+                        <br><strong>Objective:</strong> Demonstrate understanding of basic output.
+                        <br><strong>Task:</strong>
+                       Write a Java program that prints the following pattern to the console:
+                                <br>&#160;&#160;&#160;&#160;&#160;&#160;*
+                                <br>&#160;&#160;&#160;&#160;&#160;***
+                                <br>&#160;&#160;&#160;&#160;*****
+                                <br>&#160;&#160;&#160;*******
+
+
+                        <br><br>
+                        <strong>Question 2:</strong> <br>
+                        <br><strong>Ob</strong>jective: Assess knowledge of arithmetic operations.
+                        <br><strong>Task:</strong>
+                        Write a Java program that calculates and prints the average of three numbers.
+                        <br><br><strong>Question 3:</strong> <br>
+                        <br><strong>Objective:</strong> Evaluate the use of conditional statements.
+                        <br><strong>Task:</strong>
+                        Write a Java program that takes an integer input and prints whether it is even or odd.
+                        <br><br><strong>Question 4:</strong> <br>
+                        <br><strong>Objective:</strong> Test understanding of loops.
+                        <br><strong>Task:</strong>
+                        Write a Java program using a for loop to print the numbers from 1 to 10.
+                        <br><br><strong>Question 5:</strong> <br>
+                        <br><strong>Objective:</strong> Assess the use of control flow statements.
+                        <br><strong>Task:</strong>
+                        Write a Java program that uses if-else statements to determine if a given number is positive, negative, or zero.
+                        <br><br><strong>Question 6:</strong> <br>
+                        <br><strong>Objective:</strong> Evaluate the understanding of while loop.
+                        <br><strong>Task:</strong>
+                        Write a Java program using a while loop to print the Fibonacci series up to the 10th term.
+                        <br><br><strong>Question 7:</strong> <br>
+                        <br><strong>Objective:</strong> Assess the knowledge of do-while loop.
+                        <br><strong>Task:</strong>
+                        Write a Java program using a do-while loop to repeatedly prompt the user for a password until they enter the correct one.
+                        <br><br><strong>Question 8:</strong> <br>
+                        <br><strong>Objective:</strong> Test understanding of basic operat<strong>ors.
+                        <br> <strong>Task:</strong>
+                        <br> Write a Java program that takes two numbers as input and performs addition, subtraction, multiplication, and division, printing the results.
+
+
+                    </p>
+                </li>
+            </ol>
         </section>
 
         <section id="sectionE" class="code-container">
@@ -409,8 +600,6 @@
             <h2>H. Important Questions</h2>
             <!-- Add content for section H -->
         </section>
-
-        <!-- Add more sections for different topics -->
 
     </main>
 
@@ -454,15 +643,24 @@
             }
         }
 
-        // Function to toggle dark mode
+        // Function to check and set dark mode based on user's preference
+        function checkAndSetDarkMode() {
+            const isDarkMode = localStorage.getItem('darkMode') === 'true';
+
+            if (isDarkMode) {
+                document.body.classList.add('dark-mode');
+            }
+        }
+
+        // Function to toggle dark mode and save user's preference
         function toggleDarkMode() {
             const body = document.body;
             body.classList.toggle('dark-mode');
 
-            // Save dark mode preference to localStorage
-            const darkModeEnabled = body.classList.contains('dark-mode');
-            localStorage.setItem('darkMode', darkModeEnabled ? 'enabled' : 'disabled');
+            const isDarkMode = body.classList.contains('dark-mode');
+            localStorage.setItem('darkMode', isDarkMode.toString());
         }
+
 
 
         function copyCode(codeId) {
