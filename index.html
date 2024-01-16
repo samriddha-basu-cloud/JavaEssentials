@@ -162,7 +162,7 @@
 <body oncontextmenu="return false;">
 
     <header>
-        <div id="logo">Java Essentials</div>
+        <div id="logo">Java Essentials [18CSV321T]</div>
         <nav>
             <div id="unitsDropdown">
                 <label for="unitSelect">Units:</label>
@@ -861,14 +861,260 @@ public class AnotherClass {
 
         <section id="sectionF1" class="code-container">
             <h2>F.1. Lab Work</h2>
-            <p>Coming Soon</p>
-            <!-- Add content for section F1 -->
+            <p>Here are a few assessments focused on understanding the scope of operators in Java:</p>
+            <h3>Assessment 1:</h3>
+            <p><strong>Objective:</strong> Test students' understanding of operators within different scopes.
+                <br><br><strong>Task:</strong>
+                </p>
+                <ul>
+                    <li>Create a Java program with a class named <strong>OperatorScopeExample</strong>.</li>
+                    <li>Inside the class, declare the following variables:</li>
+                    <ul>
+                        <li>
+                            A class-level variable (static) of type int.
+                        </li>
+                        <li>
+                            A method-level variable inside the main method of type double.
+                        </li>
+                        <li>
+                            A block-level variable inside a block within the main method of type boolean.
+                        </li>
+                    </ul>
+                    <li>
+                        In each scope, use an assignment operator (=) to initialize the variables with values.
+                    </li>
+                    <li>
+                        Print the values of all variables inside the main method.
+                    </li>
+                </ul>
+            <h3>Assessment 2:</h3>
+            <p><strong>Objective:</strong></p> Assess students' ability to work with arithmetic and comparison operators in different scopes.
+            <br><br><strong>Task:</strong> 
+            <ul>
+                <li>
+                    Create a Java program with a class named <strong>OperatorAssessment</strong>.
+                </li>
+                <li>Inside the class, declare two class-level variables (static) of type int.</li>
+                <li>In the main method, declare two method-level variables of type double.</li>
+                <li>Using arithmetic operators, perform the following operations within the main method:</li>
+                <ul>
+                    <li>
+                        Add the two class-level variables and assign the result to one of the method-level variables.
+                    </li>
+                    <li>
+                        Subtract one method-level variable from the other and assign the result to the other class-level variable.
+                    </li>
+                </ul>
+                <li>
+                    Using comparison operators, compare the two method-level variables and print whether they are equal or not.
+                </li>
+            </ul>
+
+            <h3>Assessment 3:</h3>
+            <p><strong>Objective:</strong>Test students' understanding of logical operators in various scopes.
+               <br><br><strong>Task:</strong></p> 
+               <ul>
+                <li>Create a Java program with a class named <strong>LogicalOperatorScope</strong>.</li>
+                <li>Inside the class, declare a class-level variable (static) of type boolean.</li>
+                <li>Use logical operators to perform the following operations within the main method:</li>
+                <ul>
+                    <li>Use the class-level variable and one method-level variable to check if at least one of them is true. Print the result.</li>
+                    <li>Use the other method-level variable and the class-level variable to check if both of them are false. Print the result.</li>
+                </ul>
+               </ul>
+
+            <h3>Assessment 4:</h3>
+            <p><strong>Objective:</strong>Assess students' understanding of the scope of assignment operators.
+            <br><br><strong>Task:</strong></p>
+            <ul>
+                <li>Create a Java program with a class named <strong>AssignmentOperatorScope</strong>.</li>
+                <li>Inside the class, declare a class-level variable (static) of type int.</li>
+                <li>In the main method, declare a method-level variable of type int.</li>
+                <li>Use assignment operators to perform the following operations within the main method:</li>
+                <ul>
+                    <li>Assign a value to the class-level variable.</li>
+                    <li>Use the method-level variable to increment the value of the class-level variable.</li>
+                </ul>
+                <li>Print the final value of the class-level variable.</li>
+            </ul>
         </section>
 
         <section id="sectionG" class="code-container">
             <h2>G. Initialization of Arrays, Control Statements, Iterative Statements (Loops), Jump Statements, Class Fundamentals, Methods</h2>
-            <p>Coming Soon</p>
-            <!-- Add content for section G -->
+            <ol type="I">
+                <li>
+                    <h3><strong>Initialization of Arrays:</strong></h3>
+            <ol>
+                <li>
+                    <h3>Introduction:</h3>
+                    <p>Definition: An array in Java is a data structure that allows you to store multiple values of the same type under a single variable name. Initializing an array involves allocating memory and assigning initial values to its elements.</p>
+                </li>
+                <li>
+                    <h3>Declaration and Basic Initialization:</h3>
+                    <ul>
+                        <li>
+                            <strong>Declaration:</strong> Arrays are declared using square brackets []. For example, int[] numbers; declares an integer array.
+                        </li>
+                        <li>
+                            <strong>Basic Initialization: </strong> Arrays can be initialized using the new keyword, specifying the data type and size of the array. For example, int[] numbers = new int[5]; creates an integer array with a size of 5.
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <h3>Inline Initialization:</h3><br>
+                    <strong>Inline Initialization:</strong> Arrays can be initialized at the time of declaration, specifying the values within curly braces {}. For example, int[] numbers = {1, 2, 3, 4, 5}; initializes an array with specific values.
+                </li>
+                <li>
+                    <h3>Multidimensional Arrays: </h3>
+                    <strong>Multidimensional Arrays: </strong>Arrays can have more than one dimension. For example, int[][] matrix = new int[3][4]; declares a 3x4 matrix.
+                </li>
+                <li>
+                    <h3> Accessing Array Elements:</h3>
+                    <strong>Indexing:</strong>
+                    Array elements are accessed using indices. The first element is at index 0, the second at index 1, and so on. For example, int value = numbers[2]; retrieves the third element in the array.
+                </li>
+                <li>
+                    <h3>Array Length:</h3>
+                    <strong>Length Property: </strong>The length property is used to determine the number of elements in an array. For example, int size = numbers.length; gives the size of the numbers array.
+                </li>
+                <li>
+                    <h3>Dynamic Initialization:</h3>
+                    <strong>Dynamic Initialization:</strong> : Arrays can be dynamically initialized with user input or calculated values during runtime. For example
+                    <div class="code-container">
+                        <pre class="line-numbers"><code class="language-java" id="code12">
+Scanner scanner = new Scanner(System.in);
+System.out.print("Enter the size of the array: ");
+int size = scanner.nextInt();
+int[] dynamicArray = new int[size];
+                        </code></pre>
+                        <div class="copy-button" onclick="copyCode('code12')">Copy</div>
+                    </div>
+                </li>
+                <li>
+                    <h3>Understanding Types of Arrays:</h3>
+                    <ol type ="a">
+                        <li>
+                            <strong>One Dimensional Array:</strong>
+                             A one-dimensional array is a linear collection of elements.
+                            <br><strong>Example: </strong>
+                            <div class="code-container">
+                                <pre class="line-numbers"><code class="language-java" id="code13">
+int[] numbers = {1, 2, 3, 4, 5};                             
+                                </code></pre>
+                                <div class="copy-button" onclick="copyCode('code13')">Copy</div>
+                            </div>
+                        </li>
+                        <br>
+                        <li>
+                            <strong>Jagged Array:</strong>A jagged array is an array of arrays where each sub-array can have a different size.
+                            <br><strong>Example:</strong>
+                            <div class="code-container">
+                                <pre class="line-numbers"><code class="language-java" id="code14">
+int[][] jaggedArray = {
+    {1, 2, 3},
+    {4, 5},
+    {6, 7, 8, 9}
+    };
+                                </code></pre>
+                                <div class="copy-button" onclick="copyCode('code14')">Copy</div>
+                            </div>
+                        </li>
+                        <br>
+                        <li>
+                            <strong>Multi-Dimensional Array: </strong> In general, a multidimensional array refers to an array with more than one dimension (e.g., two-dimensional, three-dimensional).
+                            <br><strong>Example: </strong>
+                            <div class="code-container">
+                                <pre class="line-numbers"><code class="language-java" id="code15">
+int[][][] threeDArray = new int[3][4][2];
+                                </code></pre>
+                                <div class="copy-button" onclick="copyCode('code15')">Copy</div>
+                            </div>
+                        </li>
+                    </ol>
+                    <p><h3>Conclusion: </h3> <br>Understanding the initialization of arrays in Java is fundamental for working with collections of data. Whether it's a one-dimensional array, a two-dimensional matrix, or a more complex jagged array, Java's array capabilities provide flexibility in representing and processing data efficiently.</p>
+                </li>
+            </ol>
+        </li>
+        <li>
+            <h3><strong>Control Statements: </strong></h3>
+            <ol>
+                <li>
+                    <h3>Introduction:</h3>
+                    <strong>Definition: </strong>Control statements in Java are used to alter the flow of program execution. They enable decision-making, looping, and branching within the code.
+                </li>
+                <li>
+                    <h3>Conditional Statements: </h3>
+                    <ul>
+                        <li>
+                            if Statement:
+                            <div class="code-container">
+                                <pre class="line-numbers"><code class="language-java" id="code16">
+if (condition) {
+    // code block executed if condition is true
+}                              
+                                </code></pre>
+                                <div class="copy-button" onclick="copyCode('code16')">Copy</div>
+                            </div>
+                        </li>
+                        <br>
+                        <li>
+                            if-else Statement:
+                            <div class="code-container">
+                                <pre class="line-numbers"><code class="language-java" id="code17">
+if (condition) {
+    // code block executed if condition is true
+} else {
+    // code block executed if condition is false
+}
+                                </code></pre>
+                                <div class="copy-button" onclick="copyCode('code17')">Copy</div>
+                            </div>
+                        </li>
+                        <br>
+                        <li>
+                            if-else if-else Statement:
+                            <div class="code-container">
+                                <pre class="line-numbers"><code class="language-java" id="code18">
+if (condition) {
+    // code block executed if condition is true
+} else if (condition2) {
+    // code block executed if condition2 is true
+} else {
+    // code block executed if no conditions are true
+}                          
+                                </code></pre>
+                                <div class="copy-button" onclick="copyCode('code18')">Copy</div>
+                            </div>
+                        </li>
+                        </ul>
+                        <li>
+                            <h3>Switch Statement: </h3>
+                            <div class="code-container">
+                                <pre class="line-numbers"><code class="language-java" id="code19">
+switch (expression) {
+    case value1:
+        // code block executed if expression equals value1
+        break;
+    case value2:
+        // code block executed if expression equals value2
+        break;
+    // ...
+    default:
+        // code block executed if no cases match
+}
+                                </code></pre>
+                                <div class="copy-button" onclick="copyCode('code19')">Copy</div>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+            </ol>
+            
+        </li>
+            </ol>
+            
+            
+            More on it later...
         </section>
 
         <section id="sectionG1" class="code-container">
