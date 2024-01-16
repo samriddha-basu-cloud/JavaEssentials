@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Notes</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism.min.css">
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/autoloader/prism-autoloader.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            transition: background-color 0.5s, color 0.5s;
+        }
+        header {
+            background-color: #333;
+            color: #ffffff;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        nav {
+            display: flex;
+            align-items: center;
+        }
+        #logo {
+            font-size: 1.5em;
+        }
+        #unitsDropdown {
+            margin: 0 20px;
+        }
+        #unitsDropdown select {
+            padding: 5px;
+            font-size: 16px;
+        }
+        #darkModeToggle {
+            cursor: pointer;
+            width: 50px;
+            height: 25px;
+            background: linear-gradient(to right, #ffcc29, #ffcc29 50%, #6666ff 50%, #6666ff);
+            background-size: 200% 100%;
+            background-position: right bottom;
+            border-radius: 25px;
+            transition: background-position 0.5s;
+        }
+        #darkModeToggle::before {
+            content: '🌙';
+            display: block;
+            float: left;
+            line-height: 25px;
+            margin-left: 10px;
+        }
+        .dark-mode #darkModeToggle {
+            background-position: left bottom;
+        }
+        .dark-mode #darkModeToggle::before {
+            content: '☀️';
+            margin-right: 10px;
+            margin-left: 0;
+        }
+        .dark-mode {
+            background-color: #121212;
+            color: #ffffff;
+        }
+        .dark-mode .code-container {
+            background-color: #1e1e1e;
+            color: #ffffff;
+            box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+        }
+        .code-container {
+            position: relative;
+            margin-top: 20px;
+            padding: 20px;
+            border-radius: 5px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .copy-button {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            cursor: pointer;
+            color: #333;
+            background-color: #fff;
+            padding: 5px;
+            border-radius: 3px;
+            display: flex;
+            align-items: center;
+        }
+        .copy-button::before {
+            content: '\1F4C4'; /* Unicode character for two paper sheets */
+            margin-right: 5px;
+        }
+        .index {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            margin-top: 20px;
+            border-radius: 5px;
+            max-width: 400px; /* Set a maximum width for responsiveness */
+            margin-left: auto; /* Center the index on the left */
+            margin-right: auto; /* Center the index on the right */
+        }
+        .index a {
+            display: block;
+            color: #fff;
+            text-decoration: none;
+            margin-bottom: 10px; /* Add margin between index items */
+            font-weight: bold;
+        }
+
+        footer {
+            text-align: center; /* Center align the text in the footer */
+            padding: 10px;
+            background-color: #333;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div id="logo">Java Essentials</div>
+        <nav>
+            <div id="unitsDropdown">
+                <label for="unitSelect">Units:</label>
+                <select id="unitSelect">
+                    <option value="unit1">Unit 1</option>
+                    <option value="unit2">Unit 2</option>
+                    <option value="unit3">Unit 3</option>
+                    <option value="unit4">Unit 4</option>
+                    <option value="unit5">Unit 5</option>
+                </select>
+            </div>
+            <div id="darkModeToggle" onclick="toggleDarkMode()"></div>
+        </nav>
+    </header>
+
+    <div class="index">
+        <h3>INDEX</h3>
+        <a href="#sectionA">A. Evolution of Java</a>
+        <a href="#sectionB">B. Object Oriented Concepts of Java</a>
+        <a href="#sectionC">C. Encapsulation, Polymorphism, Inheritance</a>
+        <a href="#sectionD">D. Java and its uses</a>
+        <a href="#sectionD1">D.1. Lab work</a>
+        <a href="#sectionE">E. Introduction to Java, Dynamic Initialization of Variables, Scope and Lifetime of Variables, Operators</a>
+        <a href="#sectionF">F. Difference between Scope and Visibility</a>
+        <a href="#sectionF1">F.1. Lab work</a>
+        <a href="#sectionG">G. Initialization of Arrays, Control Statements, Iterative Statements (Loops), Jump Statements, Class Fundamentals, Methods</a>
+        <a href="#sectionG1">G.1. Lab work</a>
+        <a href="#sectionH">H. Important Questions</a>
+    </div>
+
+    <main style="padding: 20px;">
+        
+
+        <section id="sectionA" class="code-container">
+            <h2>A. Evolution of Java</h2>
+        
+            <ol>
+                <li>
+                    <h3>Inception (1991-1995):</h3>
+                    <p><strong>James Gosling and Sun Microsystems:</strong> Java was created by James Gosling and his team at Sun Microsystems in the early 1990s.</p>
+                    <p>Objective: Originally developed for consumer electronics, it aimed to provide a platform-independent language.</p>
+                </li>
+        
+                <li>
+                    <h3>Java 1.0 (1996):</h3>
+                    <p>Official Release: Java 1.0 was officially released in 1996.</p>
+                    <p>Key Features: Introduced key features such as the Java Virtual Machine (JVM), applets, and Swing for GUI development.</p>
+                </li>
+        
+                <li>
+                    <h3>Java 2 (J2SE 1.2, 1998):</h3>
+                    <p>Major Upgrade: Significant enhancements were introduced with J2SE 1.2.</p>
+                    <p>Swing API: The Swing API was introduced, providing a more advanced set of GUI components.</p>
+                    <p>Collections Framework: The Collections Framework was added for better data structure support.</p>
+                </li>
+        
+                <li>
+                    <h3>J2SE 5.0 (Java 5, 2004):</h3>
+                    <p>Generics: Introduced generics to provide compile-time type safety.</p>
+                    <p>Metadata Annotations: Added metadata annotations for simplifying code documentation.</p>
+                    <p>Enumeration and Autoboxing: Enhanced with features like enumeration and autoboxing.</p>
+                </li>
+
+                <li>
+                    <h3>Java 6 (2006)</h3>
+                    <p>Scripting API: Introduced the Java Compiler API and Scripting API.</p>
+                    <p>Performance Improvements: Focused on improving performance with enhancements to the JVM.</p>
+                </li>
+
+                <li>
+                    <h3>Java 7 (2011)</h3>
+                    <p>Project Coin Features: Introduced small language enhancements (Project Coin).</p>
+                    <p>Fork/Join Framework: Added support for parallel programming with the Fork/Join framework.</p>
+                </li>
+
+                <li>
+                    <h3>Java 8 (2014)</h3>
+                    <p>Lambda Expressions: A major feature introducing lambda expressions for functional programming.</p>
+                    <p>Streams API: Added the Streams API for working with sequences of data.</p>
+                    <p>Date and Time API: Improved date and time handling with the java.time package.</p>
+                </li>
+
+                <li>
+                    <h3>Java 9 (2017)</h3>
+                    <p>Module System: Introduced the Java Platform Module System (Project Jigsaw).</p>
+                    <p>JShell: Added the JShell tool for interactive Java programming.</p>
+                </li>
+
+        
+            </ol>
+        
+            <p><strong>Conclusion:</strong> Java's evolution has been marked by a commitment to platform independence, continuous enhancements, and community involvement. Its adaptability and versatility make it a cornerstone in various domains, ensuring its relevance in the dynamic landscape of software development.</p>
+        </section>
+        
+
+        <section id="sectionB" class="code-container">
+            <h2>B. Object Oriented Concepts of Java</h2>
+            <!-- Add content for section B -->
+        </section>
+
+        <section id="sectionC" class="code-container">
+            <h2>C. Encapsulation, Polymorphism, Inheritance</h2>
+            <!-- Add content for section C -->
+        </section>
+
+        <section id="sectionD" class="code-container">
+            <h2>D. Java and its uses</h2>
+            <!-- Add content for section D -->
+        </section>
+
+        <section id="sectionD1" class="code-container">
+            <h2>D.1. Lab work</h2>
+            <!-- Add content for section D1 -->
+        </section>
+
+        <section id="sectionE" class="code-container">
+            <h2>E. Introduction to Java, Dynamic Initialization of Variables, Scope and Lifetime of Variables, Operators</h2>
+            <!-- Add content for section E -->
+        </section>
+
+        <section id="sectionF" class="code-container">
+            <h2>F. Difference between Scope and Visibility</h2>
+            <!-- Add content for section F -->
+        </section>
+
+        <section id="sectionF1" class="code-container">
+            <h2>F.1. Lab Work</h2>
+            <!-- Add content for section F1 -->
+        </section>
+
+        <section id="sectionG" class="code-container">
+            <h2>G. Initialization of Arrays, Control Statements, Iterative Statements (Loops), Jump Statements, Class Fundamentals, Methods</h2>
+            <!-- Add content for section G -->
+        </section>
+
+        <section id="sectionG1" class="code-container">
+            <h2>G.1. Lab work</h2>
+            <!-- Add content for section G1 -->
+        </section>
+
+        <section id="sectionH" class="code-container">
+            <h2>H. Important Questions</h2>
+            <!-- Add content for section H -->
+        </section>
+
+        <!-- Add more sections for different topics -->
+
+    </main>
+
+    <footer>
+        <p>Contact the associated faculty in case of additional guidance.</p>
+    </footer>
+
+    <script>
+        function toggleDarkMode() {
+            const body = document.body;
+            body.classList.toggle('dark-mode');
+        }
+
+        function copyCode(codeId) {
+            const codeElement = document.getElementById(codeId);
+            const codeText = codeElement.innerText;
+
+            navigator.clipboard.writeText(codeText)
+                .then(() => alert('Code copied to clipboard!'))
+                .catch(err => console.error('Unable to copy code', err));
+        }
+    </script>
+
+</body>
+</html>
