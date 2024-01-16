@@ -51,5 +51,3 @@ This project is not licensed.
 For additional guidance or inquiries, contact the associated faculty.
 
 ---
-
-**Note:** This README is a basic template. Update the links and sections as you fill in the content for each unit on your website.

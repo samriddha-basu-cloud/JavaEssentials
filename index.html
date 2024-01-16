@@ -125,10 +125,23 @@
             color: #fff;
         }
 
-        #goToTopButton {
+        #goToTopButton{
             display: none;
             position: fixed;
             bottom: 20px;
+            right: 20px;
+            background-color: #6666ff;
+            color: #fff;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #stopSpeechButton{
+            display: none;
+            position: fixed;
+            bottom: 100px;
             right: 20px;
             background-color: #6666ff;
             color: #fff;
@@ -166,18 +179,18 @@
     </header>
 
     <div class="index">
-        <h3>INDEX</h3>
-        <a href="#sectionA">A. Evolution of Java</a>
-        <a href="#sectionB">B. Object Oriented Concepts of Java</a>
-        <a href="#sectionC">C. Encapsulation, Polymorphism, Inheritance</a>
-        <a href="#sectionD">D. Java and its uses</a>
-        <a href="#sectionD1">D.1. Lab work</a>
-        <a href="#sectionE">E. Introduction to Java, Dynamic Initialization of Variables, Scope and Lifetime of Variables, Operators</a>
-        <a href="#sectionF">F. Difference between Scope and Visibility</a>
-        <a href="#sectionF1">F.1. Lab work</a>
-        <a href="#sectionG">G. Initialization of Arrays, Control Statements, Iterative Statements (Loops), Jump Statements, Class Fundamentals, Methods</a>
-        <a href="#sectionG1">G.1. Lab work</a>
-        <a href="#sectionH">H. Important Questions</a>
+        <h3><strong>INDEX</strong></h3>
+        <a href="#sectionA">A. Evolution of Java<span class="text-to-speech" onclick="speakSection('sectionA')">&nbsp; 🔊</span></a>
+        <a href="#sectionB">B. Object Oriented Concepts of Java<span class="text-to-speech" onclick="speakSection('sectionB')">&nbsp; 🔊</span></a>
+        <a href="#sectionC">C. Encapsulation, Polymorphism, Inheritance<span class="text-to-speech" onclick="speakSection('sectionC')">&nbsp; 🔊</span></a>
+        <a href="#sectionD">D. Java and its uses<span class="text-to-speech" onclick="speakSection('sectionD')">&nbsp; 🔊</span></a>
+        <a href="#sectionD1">D.1. Lab work<span class="text-to-speech" onclick="speakSection('sectionD1')">&nbsp; 🔊</span></a>
+        <a href="#sectionE">E. Introduction to Java, Dynamic Initialization of Variables, Scope and Lifetime of Variables, Operators<span class="text-to-speech" onclick="speakSection('sectionE')">&nbsp; 🔊</span></a>
+        <a href="#sectionF">F. Difference between Scope and Visibility<span class="text-to-speech" onclick="speakSection('sectionF')">&nbsp; 🔊</span></a>
+        <a href="#sectionF1">F.1. Lab work<span class="text-to-speech" onclick="speakSection('sectionF1')">&nbsp; 🔊</span></a>
+        <a href="#sectionG">G. Initialization of Arrays, Control Statements, Iterative Statements (Loops), Jump Statements, Class Fundamentals, Methods<span class="text-to-speech" onclick="speakSection('sectionG')">&nbsp; 🔊</span></a>
+        <a href="#sectionG1">G.1. Lab work<span class="text-to-speech" onclick="speakSection('sectionG1')">&nbsp; 🔊</span></a>
+        <a href="#sectionH">H. Important Questions<span class="text-to-speech" onclick="speakSection('sectionH')">&nbsp; 🔊</span></a>
     </div>
 
     <main style="padding: 20px;">
@@ -882,8 +895,77 @@ public class AnotherClass {
         <img src="back-to-top.png" style="width: 35px;" alt="Go to Top">
     </button>
 
+    <!-- Speech stop button -->
+    <button id="stopSpeechButton" onclick="stopSpeech()">
+        <img src="silence.png" style="width: 35px;" alt="MUTE">
+    </button>
+
+
 
     <script>
+
+        // Global variable to track the ongoing speech
+        let currentSpeech = null;
+
+        // Function to speak the content of a specific section
+        function speakSection(sectionId) {
+            const sectionElement = document.getElementById(sectionId);
+            const textToSpeak = getTextContent(sectionElement);
+
+            // Stop any ongoing speech
+            stopSpeech();
+
+            // Speak the text
+            currentSpeech = speakText(textToSpeak);
+        }
+
+        // Function to get the text content of an element and its descendants
+        function getTextContent(element) {
+            if (!element) {
+                return '';
+            }
+
+            let text = element.innerText || element.textContent || '';
+
+            // Recursively get text content of child elements
+            for (const child of element.children) {
+                text += getTextContent(child);
+            }
+
+            return text;
+        }
+
+        // Function to speak text using Web Speech API
+        function speakText(text) {
+            const synth = window.speechSynthesis;
+            const utterance = new SpeechSynthesisUtterance(text);
+            synth.speak(utterance);
+
+            // Add event listener for speech end
+            utterance.addEventListener('end', function() {
+                // Hide stop speech button when speech ends
+                document.getElementById('stopSpeechButton').style.display = 'none';
+            });
+
+            // Show stop speech button when speech starts
+            document.getElementById('stopSpeechButton').style.display = 'inline-block';
+
+            return utterance;
+        }
+
+        // Function to stop the ongoing speech
+        function stopSpeech() {
+            if (currentSpeech) {
+                const synth = window.speechSynthesis;
+                synth.cancel();
+
+                // Hide stop speech button
+                document.getElementById('stopSpeechButton').style.display = 'none';
+
+                currentSpeech = null;
+            }
+        }
+
         document.addEventListener('DOMContentLoaded', function() {
             // Disable right-click on the entire document
             document.addEventListener('contextmenu', function(event) {
@@ -941,6 +1023,8 @@ public class AnotherClass {
                 .then(() => alert('Code copied to clipboard!'))
                 .catch(err => console.error('Unable to copy code', err));
         }
+
+        
     </script>
 
 </body>
