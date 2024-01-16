@@ -15,6 +15,10 @@
             padding: 0;
             transition: background-color 0.5s, color 0.5s;
         }
+        ::selection {
+            background-color: #6666ff;
+            color: #fff;
+        }
         header {
             background-color: #333;
             color: #ffffff;
@@ -385,7 +389,7 @@ public class HelloWorld {
     }
 }
                 </code></pre>
-                <div class="copy-button" onclick="copyCode('code1')">Copy Code</div>
+                <div class="copy-button" onclick="copyCode('code1')">Copy</div>
             </div>
 
             <h3>Key Features of Java:</h3>
@@ -574,12 +578,158 @@ public class HelloWorld {
 
         <section id="sectionE" class="code-container">
             <h2>E. Introduction to Java, Dynamic Initialization of Variables, Scope and Lifetime of Variables, Operators</h2>
-            <!-- Add content for section E -->
+            <ol>
+                <li>
+                    <h3>Introduction to Java:</h3>
+                    <p>Java is a high-level, versatile, and object-oriented programming language developed by James Gosling and his team at Sun Microsystems. It was released in the mid-1990s and has since become one of the most widely used programming languages globally. Java is known for its platform independence, achieved through the use of the Java Virtual Machine (JVM), allowing Java programs to run on various devices without modification.</p>
+                </li>
+
+                <li>
+                    <h3>Dynamic Initialization of Variables:</h3>
+                    <p>In Java, variables can be dynamically initialized, meaning their values can be set during runtime rather than at compile-time. This is often done through user input or by computing the initial value based on certain conditions. Here's an example in Java:</p>
+                    <div class="code-container">
+                        <pre class="line-numbers"><code class="language-java" id="code2">
+import java.util.Scanner;
+
+public class DynamicInitializationExample {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+                            
+        System.out.print("Enter a number: ");
+        int userInput = scanner.nextInt();
+                            
+        // Dynamic initialization of a variable
+        int dynamicVariable = userInput * 2;
+                            
+        System.out.println("Dynamic Variable: " + dynamicVariable);
+    }
+}
+                        </code></pre>
+                        <div class="copy-button" onclick="copyCode('code2')">Copy</div>
+                    </div>
+
+                    <p>In this example, the value of dynamicVariable is determined based on user input at runtime.</p>
+                </li>
+
+                <li>
+                    <h3>Scope and Lifetime of Variables:</h3>
+                    <ol>
+                        <li>
+                            <strong>Scope:</strong> The scope of a variable defines where in the code it can be accessed. In Java, there are different levels of scope, including block scope, method scope, class scope, and global scope.
+                        </li>
+                        <li>
+                            <strong>Lifetime:</strong>  The lifetime of a variable is the duration during which the variable exists in the program's memory. Local variables have a shorter lifetime compared to instance and class variables.
+                        </li>
+                    </ol>
+                    <p>Example of variable scope in Java:</p>
+                    <div class="code-container">
+                        <pre class="line-numbers"><code class="language-java" id="code3">
+public class ScopeExample {
+    // Class-level variable (global scope)
+    static int globalVariable = 10;
+                            
+    public static void main(String[] args) {
+        // Method-level variable (method scope)
+        int methodVariable = 5;
+                            
+            {
+                // Block-level variable (block scope)
+                int blockVariable = 3;
+                System.out.println("Block Variable: " + blockVariable);
+            }
+                            
+            System.out.println("Method Variable: " + methodVariable);
+            System.out.println("Global Variable: " + globalVariable);
+        }
+    }
+                        </code></pre>
+                        <div class="copy-button" onclick="copyCode('code3')">Copy</div>
+                    </div>
+
+                    <p>In this example, globalVariable has class scope, methodVariable has method scope, and blockVariable has block scope.</p>
+                </li>
+
+                <li>
+                    <h3>Introduction to Operators:</h3>
+                    <p>Java provides a variety of operators for performing operations on variables and values. These operators can be categorized into:</p>
+                    
+                    <ol>
+                        <li>
+                            <strong>Arithmetic Operators:</strong> Perform basic mathematical operations such as addition, subtraction, multiplication, division, and modulus.
+                            <div class="code-container">
+                                <pre class="line-numbers"><code class="language-java" id="code4">
+int a = 10;
+int b = 5;
+int sum = a + b;
+int difference = a - b;
+int product = a * b;
+int quotient = a / b;
+int remainder = a % b;    
+                                </code></pre>
+                                <div class="copy-button" onclick="copyCode('code4')">Copy</div>
+                            </div>
+                        </li>
+                        <br>
+                        <li>
+                            <strong>Comparison Operators:</strong> Compare two values and return a boolean result.
+                            <div class="code-container">
+                                <pre class="line-numbers"><code class="language-java" id="code5">
+int x = 10;
+int y = 20;
+boolean isEqual = (x == y);
+boolean isNotEqual = (x != y);
+boolean isGreaterThan = (x > y);
+boolean isLessThan = (x < y);                                    
+                                </code></pre>
+                                <div class="copy-button" onclick="copyCode('code5')">Copy</div>
+                            </div>
+                        </li>
+                        <br>
+                        <li>
+                            <strong>Logical Operators:</strong> Perform logical operations on boolean values.
+                            <div class="code-container">
+                                <pre class="line-numbers"><code class="language-java" id="code6">
+boolean p = true;
+boolean q = false;
+boolean andResult = (p && q);
+boolean orResult = (p || q);
+boolean notResult = !p;                                    
+                                </code></pre>
+                                <div class="copy-button" onclick="copyCode('code6')">Copy</div>
+                            </div>
+                        </li>
+                        <br>
+                        <li>
+                            <strong>Assignment Operators:</strong> Assign values to variables.
+                            <div class="code-container">
+                                <pre class="line-numbers"><code class="language-java" id="code7">
+int c = 5;
+c += 3; // Equivalent to c = c + 3;                                  
+                                </code></pre>
+                                <div class="copy-button" onclick="copyCode('code7')">Copy</div>
+                            </div>
+                        </li>
+                        <br>
+                        <li>
+                            <strong>Increment and Decrement Operators:</strong> Increases or decreases values of variables.
+                            <div class="code-container">
+                                <pre class="line-numbers"><code class="language-java" id="code8">
+int count = 10;
+count++; // Increment by 1
+count--; // Decrement by 1                               
+                                </code></pre>
+                                <div class="copy-button" onclick="copyCode('code8')">Copy</div>
+                            </div>
+                        </li>
+                    </ol>
+                    <p>These are just a few examples of the operators available in Java. Operators play a crucial role in performing various computations and comparisons within Java programs.</p>
+                </li>
+            </ol>
         </section>
 
         <section id="sectionF" class="code-container">
             <h2>F. Difference between Scope and Visibility</h2>
-            <!-- Add content for section F -->
+            <p>In Java, "scope" and "visibility" are related but distinct concepts that pertain to the accessibility and lifespan of variables within a program. Let's elaborate on each concept:</p>
         </section>
 
         <section id="sectionF1" class="code-container">
