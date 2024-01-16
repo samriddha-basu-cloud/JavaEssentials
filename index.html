@@ -120,6 +120,19 @@
             color: #fff;
         }
 
+        #goToTopButton {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #6666ff;
+            color: #fff;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
         /* Responsive Styles */
         @media (max-width: 768px) {
             .index {
@@ -128,7 +141,7 @@
         }
     </style>
 </head>
-<body>
+<body oncontextmenu="return false;">
 
     <header>
         <div id="logo">Java Essentials</div>
@@ -265,13 +278,20 @@
                 </li>
 
                 <li>
-
+                    <h3>Inheritance:</h3>
+                    <p>Definition: Inheritance is a mechanism by which a class can inherit properties and behaviors from another class, promoting code reusability.
+                    <br>Superclass and Subclass: The existing class is called the superclass, and the new class is the subclass. Subclasses can extend the functionality of the superclass.</p>
                 </li>
 
                 <li>
-
+                    <h3>Polymorphism:</h3>
+                    <p>Definition: Polymorphism allows objects of different classes to be treated as objects of a common base class. It enables a single interface to represent different types.
+                    <br>Method Overloading: Java supports method overloading, allowing multiple methods with the same name but different parameters in a class.
+                    <br>Method Overriding: Subclasses can provide a specific implementation for a method defined in their superclass.</p>
                 </li>
-
+                    <h3>Abstraction:</h3>
+                    <p>Definition: Abstraction is the process of simplifying complex systems by modeling classes based on essential properties and behaviors.
+                    <br>Abstract Classes and Interfaces: Java provides abstract classes and interfaces for abstraction. Abstract classes may have abstract methods, and interfaces define a contract for implementing classes.</p>
                 <li>
 
                 </li>
@@ -308,16 +328,12 @@
                 
                 2. 
                 <br>
-                3. Inheritance:
-                <br>Definition: Inheritance is a mechanism by which a class can inherit properties and behaviors from another class, promoting code reusability.
-                <br>Superclass and Subclass: The existing class is called the superclass, and the new class is the subclass. Subclasses can extend the functionality of the superclass.
-                4. Polymorphism:
-                <br>Definition: Polymorphism allows objects of different classes to be treated as objects of a common base class. It enables a single interface to represent different types.
-                <br>Method Overloading: Java supports method overloading, allowing multiple methods with the same name but different parameters in a class.
-                <br>Method Overriding: Subclasses can provide a specific implementation for a method defined in their superclass.
-                5. Abstraction:
-                <br>Definition: Abstraction is the process of simplifying complex systems by modeling classes based on essential properties and behaviors.
-                <br>Abstract Classes and Interfaces: Java provides abstract classes and interfaces for abstraction. Abstract classes may have abstract methods, and interfaces define a contract for implementing classes.
+                3. 
+                <br>
+                4. 
+                <br>
+                5. 
+                <br>
                 6. Association:
                 <br>Definition: Association represents a relationship between two or more classes. It can be one-to-one, one-to-many, or many-to-many.
                 <br>Example: In a university system, a Student class might be associated with a Course class.
@@ -395,7 +411,42 @@
         <p>Contact the associated faculty in case of additional guidance.</p>
     </footer>
 
+    <!-- "Go to Top" button -->
+    <button id="goToTopButton" onclick="goToTop()">
+        <img src="back-to-top.png" style="width: 35px;" alt="Go to Top">
+    </button>
+
+
     <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Disable right-click on the entire document
+            document.addEventListener('contextmenu', function(event) {
+                event.preventDefault();
+                alert('No Additional Menu');
+            });
+
+            // Show/Hide "Go to Top" button based on scroll position
+            window.onscroll = function() {
+                toggleGoToTopButton();
+            };
+        });
+
+        // Function to scroll to the top of the page
+        function goToTop() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+
+        // Function to toggle visibility of the "Go to Top" button
+        function toggleGoToTopButton() {
+            const button = document.getElementById('goToTopButton');
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                button.style.display = 'block';
+            } else {
+                button.style.display = 'none';
+            }
+        }
+
         function toggleDarkMode() {
             const body = document.body;
             body.classList.toggle('dark-mode');
