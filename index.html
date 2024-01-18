@@ -118,6 +118,41 @@
             font-weight: bold;
         }
 
+        .question {
+            margin-bottom: 20px;
+        }
+
+        .options {
+            margin-left: 20px;
+        }
+
+        .submit-button {
+            background-color: #6566FF;
+            color: #FFC237;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            margin-top: 20px;
+            border-radius: 5px;
+        }
+
+        .result {
+            margin-top: 10px;
+        }
+
+        .correct {
+            color: green;
+        }
+
+        .incorrect {
+            color: red;
+        }
+
+        #totalScore, #scoreMessage {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+
         footer {
             text-align: center; /* Center align the text in the footer */
             padding: 10px;
@@ -162,18 +197,18 @@
 <body oncontextmenu="return false;">
 
     <header>
-        <div id="logo">Java Essentials [18CSV321T]</div>
+        <div id="logo">Java Essentials</div>
         <nav>
             <div id="unitsDropdown">
                 <label for="unitSelect">Units:</label>
                 <select id="unitSelect">
                     <option value="unit1">Unit 1</option>
-                    <option value="unit2">Unit 2</option>
-                    <option value="unit3">Unit 3</option>
-                    <option value="unit4">Unit 4</option>
-                    <option value="unit5">Unit 5</option>
+                    <option value="unit2" disabled>Unit 2</option>
+                    <option value="unit3" disabled>Unit 3</option>
+                    <option value="unit4" disabled>Unit 4</option>
+                    <option value="unit5" disabled>Unit 5</option>
                 </select>
-            </div>
+            </div>            
             <div id="darkModeToggle" onclick="toggleDarkMode()"></div>
         </nav>
     </header>
@@ -1111,23 +1146,626 @@ switch (expression) {
             </ol>
             
         </li>
+
+        <li>
+            <h3>Iterative Statements(Loops):</h3>
+            <ol>
+                <li>
+                    <strong>for Loop</strong>
+                    <div class="code-container">
+                        <pre class="line-numbers"><code class="language-java" id="code20">
+for (initialization; condition; update) {
+    // code block executed repeatedly while condition is true
+}
+                        </code></pre>
+                        <div class="copy-button" onclick="copyCode('code20')">Copy</div>
+                    </div>
+                </li>
+                <br>
+                <li>
+                    <strong>while Loop</strong>
+                    <div class="code-container">
+                        <pre class="line-numbers"><code class="language-java" id="code21">
+while (condition) {
+    // code block executed repeatedly while condition is true
+}
+                        </code></pre>
+                        <div class="copy-button" onclick="copyCode('code21')">Copy</div>
+                    </div>
+                </li>
+                <br>
+                <li>
+                    <strong>do-while Loop</strong>
+                    <div class="code-container">
+                        <pre class="line-numbers"><code class="language-java" id="code22">
+do {
+    // code block executed at least once, then repeatedly while condition is true
+} while (condition);
+                        </code></pre>
+                        <div class="copy-button" onclick="copyCode('code22')">Copy</div>
+                    </div>
+                </li>
+                
             </ol>
+        </li>
+
+        <li>
+            <h3>Jump Statements:</h3>
+            <ol>
+                <li>
+                    <strong>break Statement:</strong>
+                    <p>Used to terminate a loop or switch statement.</p>
+                    <div class="code-container">
+                        <pre class="line-numbers"><code class="language-java" id="code23">
+for (int i = 0; i < 10; i++) {
+    if (i == 5) {
+        break; // exits the loop when i equals 5
+    }
+}
+                        </code></pre>
+                        <div class="copy-button" onclick="copyCode('code23')">Copy</div>
+                    </div>
+                </li>
+                <br>
+                <li>
+                    <strong>continue Statement:</strong>
+                    <p>Skips the rest of the loop and continues with the next iteration.</p>
+                    <div class="code-container">
+                        <pre class="line-numbers"><code class="language-java" id="code24">
+for (int i = 0; i < 10; i++) {
+    if (i == 5) {
+        continue; // skips the code below and moves to the next iteration
+    }
+}
+                        </code></pre>
+                        <div class="copy-button" onclick="copyCode('code24')">Copy</div>
+                    </div>
+                </li>
+                <br>
+                <li>
+                    <strong>return Statement:</strong>
+                    <p>Used to exit a method and return a value.</p>
+                    <div class="code-container">
+                        <pre class="line-numbers"><code class="language-java" id="code25">
+public int add(int a, int b) {
+    return a + b; // exits the method and returns the sum of a and b
+}
+                        </code></pre>
+                        <div class="copy-button" onclick="copyCode('code25')">Copy</div>
+                    </div>
+                </li>
+                
+            </ol>
+        </li>
+        <li>
+            <h3>Class Fundamentals</h3>
+            <ol>
+                <li>
+                    <strong>Class Declaration</strong>
+                    <div class="code-container">
+                        <pre class="line-numbers"><code class="language-java" id="code26">
+public class MyClass {
+    // class members (fields, methods, etc.)
+}
+                        </code></pre>
+                        <div class="copy-button" onclick="copyCode('code26')">Copy</div>
+                    </div>
+                </li>
+                <br>
+                <li>
+                    <strong>Fields (Instance Variables):</strong>
+                    <p>Data members that represent the properties of objects.</p>
+                    <div class="code-container">
+                        <pre class="line-numbers"><code class="language-java" id="code27">
+public class Person {
+    String name;
+    int age;
+}
+                        </code></pre>
+                        <div class="copy-button" onclick="copyCode('code27')">Copy</div>
+                    </div>
+                </li>
+                <br>
+                <li>
+                    <strong> Methods (Member Functions):</strong>
+                    <p>Contain the code that defines the behavior of the class.</p>
+                    <div class="code-container">
+                        <pre class="line-numbers"><code class="language-java" id="code28">
+public class Calculator {
+    public int add(int a, int b) {
+        return a + b;
+    }
+}
+                        </code></pre>
+                        <div class="copy-button" onclick="copyCode('code28')">Copy</div>
+                    </div>
+                </li>
+                <br>
+                <li>
+                    <strong>Constructors:</strong>
+                    <p>Special methods used to initialize objects when they are created.</p>
+                    <div class="code-container">
+                        <pre class="line-numbers"><code class="language-java" id="code29">
+public class Car {
+    String model;
+    // Constructor
+    public Car(String model) {
+        this.model = model;
+    }
+}
+                        </code></pre>
+                        <div class="copy-button" onclick="copyCode('code29')">Copy</div>
+                    </div>
+                </li>
+                <br>
+                <li>
+                    <strong>Access Modifiers:</strong>
+                    <p>Control the visibility of class members.</p>
+                    <div class="code-container">
+                        <pre class="line-numbers"><code class="language-java" id="code30">
+public class MyClass {
+    public int publicField;
+    private int privateField;
+}
+                        </code></pre>
+                        <div class="copy-button" onclick="copyCode('code30')">Copy</div>
+                    </div>
+                </li>
+            </ol>
+        </li>
+
+        <li>
+            <h3>Methods:</h3>
+            <ol>
+                <li>
+                    <strong> Method Declaration:</strong>
+                    <p>Syntax: &lt;access_modifier&gt; &lt;return_type&gt; &lt;method_name&gt;(&lt;parameter_list&gt;) { // method body }</p>
+                    <div class="code-container">
+                            <pre class="line-numbers"><code class="language-java" id="code31">
+public int add(int a, int b) {
+    return a + b;
+}
+                            </code></pre>
+                            <div class="copy-button" onclick="copyCode('code31')">Copy</div>
+                        </div>
+                </li>
+                <br>
+                <li>
+                    <strong>Return Type:</strong>
+                    <p>Specifies the type of value the method returns. Use void for methods that don't return a value.</p>
+                    <div class="code-container">
+                        <pre class="line-numbers"><code class="language-java" id="code32">
+public void greet() {
+    System.out.println("Hello!");
+}
+                        </code></pre>
+                        <div class="copy-button" onclick="copyCode('code32')">Copy</div>
+                    </div>
+                </li>
+                <br>
+                <li>
+                    <strong>Parameters:</strong>
+                    <p>Variables that receive values when the method is called.</p>
+                    <div class="code-container">
+                        <pre class="line-numbers"><code class="language-java" id="code33">
+public void printMessage(String message) {
+    System.out.println(message);
+}
+                        </code></pre>
+                        <div class="copy-button" onclick="copyCode('code33')">Copy</div>
+                    </div>
+                </li>
+                <br>
+                <li>
+                    <strong>Method Overloading:</strong>
+                    <p>Defining multiple methods with the same name but different parameter lists.</p>
+                    <div class="code-container">
+                        <pre class="line-numbers"><code class="language-java" id="code34">
+public int add(int a, int b) {
+    return a + b;
+}
+
+public double add(double a, double b) {
+    return a + b;
+}
+                        </code></pre>
+                        <div class="copy-button" onclick="copyCode('code34')">Copy</div>
+                    </div>
+                </li>
+                <br>
+                <li>
+                    <strong>Static Methods:</strong>
+                    <p>Belong to the class rather than an instance.</p>
+                    <div class="code-container">
+                        <pre class="line-numbers"><code class="language-java" id="code35">
+public class MathOperations {
+    public static int add(int a, int b) {
+        return a + b;
+    }
+}
+                        </code></pre>
+                        <div class="copy-button" onclick="copyCode('code35')">Copy</div>
+                    </div>
+                </li>
+                <br>
+                <li>
+                    <strong>Recursive Methods:</strong>
+                    <p>A method that calls itself either directly or indirectly until a base condition is met.</p>
+                    <div class="code-container">
+                        <pre class="line-numbers"><code class="language-java" id="code19">
+public int factorial(int n) {
+    if (n == 0 || n == 1) {
+        return 1;
+    } else {
+        return n * factorial(n - 1);
+    }
+}
+                        </code></pre>
+                        <div class="copy-button" onclick="copyCode('code19')">Copy</div>
+                    </div>
+                </li>
+            </ol>
+            <h3>Conclusion:</h3>
+            <p>Understanding control statements, iterative statements, jump statements, class fundamentals, and methods is fundamental to Java programming. These concepts enable developers to control the flow of execution, create reusable and organized code through classes and methods, and implement various types of loops and conditional constructs.</p>
+        </li>
+
+        </ol>
             
-            
-            More on it later...
         </section>
 
         <section id="sectionG1" class="code-container">
             <h2>G.1. Lab work</h2>
+            <p>Here are some assessments focused on Arrays and Classes for your lab work:</p>
             
-            <p>Coming Soon</p>
-            <!-- Add content for section G1 -->
+            <ol>
+                <h3>Arrays Assessment:</h3>
+                <li>
+                    <strong>Assessment 1:</strong>
+                    <p>
+                        <strong>Objective:</strong> Test understanding of basic array initialization and access.
+                        <br><strong>Task:</strong>
+                    </p>
+                    <ul>
+                        <li>Create a Java program with a class named <strong>ArrayAssessment</strong>.</li>
+                        <li>Declare an integer array of size 5 named numbers.</li>
+                        <li>Initialize the array with values 10, 20, 30, 40, and 50.</li>
+                        <li>Print the values of the array using a for loop.</li>
+                    </ul>
+                </li>
+                <br>
+                <li>
+                    <strong>Assessment 2:</strong>
+                    <p>
+                        <strong>Objective:</strong> Assess understanding of multidimensional arrays. <br>
+                        <strong>Task:</strong>
+                    </p>
+                    <ul>
+                        <li>Create a Java program with a class named <strong>MatrixAssessment</strong>.</li>
+                        <li>Declare a 3x3 integer matrix named matrix.</li>
+                        <li>Initialize the matrix with values of your choice.</li>
+                        <li>Print the values of the matrix using nested for loops.</li>
+                    </ul>
+                </li>
+                <br>
+                <li>
+                    <strong>Assessment 3:</strong>
+                    <p>
+                        <strong>Objective:</strong> Test dynamic initialization of arrays and user input.
+                        <br>
+                        <strong>Task: </strong>
+                    </p>
+                    <ul>
+                        <li>Create a Java program with a class named <strong>DynamicArray.</strong></li>
+                        <li>Prompt the user to enter the size of an integer array.</li>
+                        <li>Dynamically initialize an integer array with the specified size.</li>
+                        <li>Prompt the user to enter values for each element of the array.</li>
+                        <li>Print the values of the array.</li>
+                    </ul>
+                </li>
+                <h3>Classes Assessment:</h3>
+                <li>
+                    <strong>Assessment 1:</strong>
+                    <p>
+                        <strong>Objective:</strong> Test understanding of basic class creation and instance variables.
+                        <br><strong>Task: </strong>
+                    </p>
+                    <ul>
+                        <li>Create a Java program with a class named Person.</li>
+                        <li>Add instance variables name (String) and age (int) to the class.</li>
+                        <li>Create a constructor to initialize these variables.</li>
+                        <li>Create an instance of the Person class and print its details.</li>
+                    </ul>
+                </li>
+                <br>
+                <li>
+                    <strong>Assessment 2:</strong>
+                    <p>
+                        <strong>Objective:</strong> Assess understanding of class methods and encapsulation.
+                        <br><strong>Task: </strong>
+                    </p>
+                    <ul>
+                        <li>
+                            Create a Java program with a class named Calculator.
+                        </li>
+                        <li>
+                            Add methods for addition, subtraction, multiplication, and division.
+                        </li>
+                        <li>
+                            Ensure that these methods encapsulate the operations and print the results.
+                        </li>
+                        <li>
+                            Create an instance of the Calculator class and perform arithmetic operations.
+                        </li>
+                    </ul>
+                </li>
+                <br>
+                <li>
+                    <strong>Assessment 3:</strong>
+                    <p>
+                        <strong>Objective:</strong> Test class inheritance and polymorphism.
+                        <br><strong>Task: </strong>
+                    </p>
+                    <ul>
+                        <li>Create a Java program with a base class named Shape.</li>
+                        <li>Add a method area to calculate the area of the shape.</li>
+                        <li>Create two derived classes: Rectangle and Circle.</li>
+                        <li>Override the area method in each derived class.</li>
+                        <li>Create instances of both derived classes and print their areas.</li>
+                    </ul>
+                </li>
+            </ol>
+            <h3>Note:</h3>
+            <p>These assessments cover a range of topics, including array initialization, multidimensional arrays, dynamic array initialization, class creation, instance variables, methods, encapsulation, inheritance, and polymorphism. Adjust the complexity of the assessments based on the proficiency level of the students.</p>
         </section>
 
         <section id="sectionH" class="code-container">
             <h2>H. Important Questions</h2>
-            <p>Coming Soon</p>
-            <!-- Add content for section H -->
+            <div id="quiz">
+                <div class="question" id="question1">
+                    <p>1. What does the term "scope" refer to in Java?</p>
+                    <div class="options">
+                        <input type="radio" name="q1" value="A"> A. The size of an array<br>
+                        <input type="radio" name="q1" value="B"> B. The range of visibility of a variable<br>
+                        <input type="radio" name="q1" value="C"> C. A type of loop<br>
+                        <input type="radio" name="q1" value="D"> D. The length of a string<br>
+                    </div>
+                    <button class="submit-button" onclick="checkAnswer('q1', 'B')">Submit Answer</button>
+                    <p class="result" id="result1"></p>
+                </div>
+
+                <div class="question" id="question2">
+                    <p>2. Which OOPs concept involves bundling data and methods that operate on the data into a single unit?</p>
+                    <div class="options">
+                        <input type="radio" name="q2" value="A"> A. Polymorphism<br>
+                        <input type="radio" name="q2" value="B"> B. Inheritance<br>
+                        <input type="radio" name="q2" value="C"> C. Encapsulation<br>
+                        <input type="radio" name="q2" value="D"> D. Abstraction<br>
+                    </div>
+                    <button class="submit-button" onclick="checkAnswer('q2', 'C')">Submit Answer</button>
+                    <p class="result" id="result2"></p>
+                </div>
+
+                <div class="question" id="question3">
+                    <p>3. What is the main purpose of the "this" keyword in Java classes?</p>
+                    <div class="options">
+                        <input type="radio" name="q3" value="A"> A. Refers to the superclass<br>
+                        <input type="radio" name="q3" value="B"> B. Calls a superclass method<br>
+                        <input type="radio" name="q3" value="C"> C. Refers to the current instance of the class<br>
+                        <input type="radio" name="q3" value="D"> D. Declares a new class<br>
+                    </div>
+                    <button class="submit-button" onclick="checkAnswer('q3', 'C')">Submit Answer</button>
+                    <p class="result" id="result3"></p>
+                </div>
+
+                <div class="question" id="question4">
+                    <p>4. Which operator is used for logical AND in Java?</p>
+                    <div class="options">
+                        <input type="radio" name="q4" value="A"> A. &<br>
+                        <input type="radio" name="q4" value="B"> B. &&<br>
+                        <input type="radio" name="q4" value="C"> C. ||<br>
+                        <input type="radio" name="q4" value="D"> D. ^<br>
+                    </div>
+                    <button class="submit-button" onclick="checkAnswer('q4', 'B')">Submit Answer</button>
+                    <p class="result" id="result4"></p>
+                </div>
+
+                <div class="question" id="question5">
+                    <p>5. What is the result of the expression: 5 + 2 * 3 in Java?</p>
+                    <div class="options">
+                        <input type="radio" name="q5" value="A"> A. 21<br>
+                        <input type="radio" name="q5" value="B"> B. 11<br>
+                        <input type="radio" name="q5" value="C"> C. 17<br>
+                        <input type="radio" name="q5" value="D"> D. 15<br>
+                    </div>
+                    <button class="submit-button" onclick="checkAnswer('q5', 'B')">Submit Answer</button>
+                    <p class="result" id="result5"></p>
+                </div>
+
+                <div class="question" id="question6">
+                    <p>6. Which OOPs concept allows a class to have multiple methods with the same name but different parameter lists?</p>
+                    <div class="options">
+                        <input type="radio" name="q6" value="A"> A. Inheritance<br>
+                        <input type="radio" name="q6" value="B"> B. Polymorphism<br>
+                        <input type="radio" name="q6" value="C"> C. Encapsulation<br>
+                        <input type="radio" name="q6" value="D"> D. Abstraction<br>
+                    </div>
+                    <button class="submit-button" onclick="checkAnswer('q6', 'B')">Submit Answer</button>
+                    <p class="result" id="result6"></p>
+                </div>
+
+                <div class="question" id="question7">
+                    <p>7. What is the purpose of the "super" keyword in Java classes?</p>
+                    <div class="options">
+                        <input type="radio" name="q7" value="A"> A. Refers to the current instance of the class<br>
+                        <input type="radio" name="q7" value="B"> B. Calls a superclass method<br>
+                        <input type="radio" name="q7" value="C"> C. Declares a new class<br>
+                        <input type="radio" name="q7" value="D"> D. Represents a static method<br>
+                    </div>
+                    <button class="submit-button" onclick="checkAnswer('q7', 'B')">Submit Answer</button>
+                    <p class="result" id="result7"></p>
+                </div>
+
+                <div class="question" id="question8">
+                    <p>8. Which of the following is a logical operator in Java?</p>
+                    <div class="options">
+                        <input type="radio" name="q8" value="A"> A. +<br>
+                        <input type="radio" name="q8" value="B"> B. -<br>
+                        <input type="radio" name="q8" value="C"> C. ||<br>
+                        <input type="radio" name="q8" value="D"> D. *<br>
+                    </div>
+                    <button class="submit-button" onclick="checkAnswer('q8', 'C')">Submit Answer</button>
+                    <p class="result" id="result8"></p>
+                </div>
+
+                <div class="question" id="question9">
+                    <p>9. In which year was Java first released to the public?</p>
+                    <div class="options">
+                        <input type="radio" name="q9" value="A"> A. 1990<br>
+                        <input type="radio" name="q9" value="B"> B. 1995<br>
+                        <input type="radio" name="q9" value="C"> C. 2000<br>
+                        <input type="radio" name="q9" value="D"> D. 2005<br>
+                    </div>
+                    <button class="submit-button" onclick="checkAnswer('q9', 'B')">Submit Answer</button>
+                    <p class="result" id="result9"></p>
+                </div>
+
+                <div class="question" id="question10">
+                    <p>10. What is the purpose of the "break" statement in Java?</p>
+                    <div class="options">
+                        <input type="radio" name="q10" value="A"> A. Skips the rest of the loop and continues with the next iteration<br>
+                        <input type="radio" name="q10" value="B"> B. Exits the loop or switch statement<br>
+                        <input type="radio" name="q10" value="C"> C. Terminates the program<br>
+                        <input type="radio" name="q10" value="D"> D. Jumps to a specific line in the code<br>
+                    </div>
+                    <button class="submit-button" onclick="checkAnswer('q10', 'B')">Submit Answer</button>
+                    <p class="result" id="result10"></p>
+                </div>
+
+                <div class="question" id="question11">
+                    <p>11. Which statement is used for dynamic initialization of arrays in Java?</p>
+                    <div class="options">
+                        <input type="radio" name="q11" value="A"> A. new Array;<br>
+                        <input type="radio" name="q11" value="B"> B. initialize Array;<br>
+                        <input type="radio" name="q11" value="C"> C. new int[];<br>
+                        <input type="radio" name="q11" value="D"> D. new int[size];<br>
+                    </div>
+                    <button class="submit-button" onclick="checkAnswer('q11', 'D')">Submit Answer</button>
+                    <p class="result" id="result11"></p>
+                </div>
+
+                <div class="question" id="question12">
+                    <p>12. What does the length property represent in Java arrays?</p>
+                    <div class="options">
+                        <input type="radio" name="q12" value="A"> A. Size of the array<br>
+                        <input type="radio" name="q12" value="B"> B. Number of elements in the array<br>
+                        <input type="radio" name="q12" value="C"> C. Index of the last element<br>
+                        <input type="radio" name="q12" value="D"> D. Sum of array elements<br>
+                    </div>
+                    <button class="submit-button" onclick="checkAnswer('q12', 'B')">Submit Answer</button>
+                    <p class="result" id="result12"></p>
+                </div>
+
+                <div class="question" id="question13">
+                    <p>13. Which control statement is used for executing a block of code repeatedly while a given condition is true?</p>
+                    <div class="options">
+                        <input type="radio" name="q13" value="A"> A.  if statement<br>
+                        <input type="radio" name="q13" value="B"> B. switch statement<br>
+                        <input type="radio" name="q13" value="C"> C. for loop<br>
+                        <input type="radio" name="q13" value="D"> D. do-while loop<br>
+                    </div>
+                    <button class="submit-button" onclick="checkAnswer('q13', 'C')">Submit Answer</button>
+                    <p class="result" id="result13"></p>
+                </div>
+
+                <div class="question" id="question14">
+                    <p>14. In Java, what is the primary purpose of the continue statement?</p>
+                    <div class="options">
+                        <input type="radio" name="q14" value="A"> A. Skips the rest of the loop and continues with the next iteration<br>
+                        <input type="radio" name="q14" value="B"> B. Exits the loop or switch statement<br>
+                        <input type="radio" name="q14" value="C"> C. Terminates the program<br>
+                        <input type="radio" name="q14" value="D"> D. Jumps to a specific line in the code<br>
+                    </div>
+                    <button class="submit-button" onclick="checkAnswer('q14', 'A')">Submit Answer</button>
+                    <p class="result" id="result14"></p>
+                </div>
+
+                <div class="question" id="question15">
+                    <p>15. What is a constructor in Java?</p>
+                    <div class="options">
+                        <input type="radio" name="q15" value="A"> A. A method that returns a value<br>
+                        <input type="radio" name="q15" value="B"> B. A method that initializes the class members<br>
+                        <input type="radio" name="q15" value="C"> C. A loop structure<br>
+                        <input type="radio" name="q15" value="D"> D. A conditional statement<br>
+                    </div>
+                    <button class="submit-button" onclick="checkAnswer('q15', 'B')">Submit Answer</button>
+                    <p class="result" id="result15"></p>
+                </div>
+
+                <div class="question" id="question16">
+                    <p>16. Which keyword is used to declare a method in Java?</p>
+                    <div class="options">
+                        <input type="radio" name="q16" value="A"> A. function<br>
+                        <input type="radio" name="q16" value="B"> B. method<br>
+                        <input type="radio" name="q16" value="C"> C. def<br>
+                        <input type="radio" name="q16" value="D"> D. void<br>
+                    </div>
+                    <button class="submit-button" onclick="checkAnswer('q16', 'D')">Submit Answer</button>
+                    <p class="result" id="result16"></p>
+                </div>
+
+                <div class="question" id="question17">
+                    <p>17. What is the purpose of the return statement in Java methods?</p>
+                    <div class="options">
+                        <input type="radio" name="q17" value="A"> A. Terminates the program<br>
+                        <input type="radio" name="q17" value="B"> B. Skips the rest of the loop and continues with the next iteration<br>
+                        <input type="radio" name="q17" value="C"> C. Exits the method and returns a value<br>
+                        <input type="radio" name="q17" value="D"> D. Jumps to a specific line in the code<br>
+                    </div>
+                    <button class="submit-button" onclick="checkAnswer('q17', 'C')">Submit Answer</button>
+                    <p class="result" id="result17"></p>
+                </div>
+
+                <div class="question" id="question18">
+                    <p>18. What does method overloading mean in Java?</p>
+                    <div class="options">
+                        <input type="radio" name="q18" value="A"> A. Declaring methods with the same name but different parameter lists<br>
+                        <input type="radio" name="q18" value="B"> B. Overriding superclass methods<br>
+                        <input type="radio" name="q18" value="C"> C. Defining methods with the same name and same parameter list<br>
+                        <input type="radio" name="q18" value="D"> D. Declaring methods with different names<br>
+                    </div>
+                    <button class="submit-button" onclick="checkAnswer('q18', 'A')">Submit Answer</button>
+                    <p class="result" id="result18"></p>
+                </div>
+
+                <div class="question" id="question19">
+                    <p>19. What is the purpose of the static keyword in Java methods?</p>
+                    <div class="options">
+                        <input type="radio" name="q19" value="A"> A. Declares a static variable<br>
+                        <input type="radio" name="q19" value="B"> B. Indicates that the method can be overridden<br>
+                        <input type="radio" name="q19" value="C"> C. Specifies that the method belongs to the class, not an instance<br>
+                        <input type="radio" name="q19" value="D"> D. Declares a constant variable<br>
+                    </div>
+                    <button class="submit-button" onclick="checkAnswer('q19', 'C')">Submit Answer</button>
+                    <p class="result" id="result19"></p>
+                </div>
+
+                <div class="question" id="question20">
+                    <p>20. Which of the following is a valid method declaration in Java?</p>
+                    <div class="options">
+                        <input type="radio" name="q20" value="A"> A. public int add(){}<br>
+                        <input type="radio" name="q20" value="B"> B. int add(){public}<br>
+                        <input type="radio" name="q20" value="C"> C. void add(int a, int b){}<br>
+                        <input type="radio" name="q20" value="D"> D. private double add(int x, int y)<br>
+                    </div>
+                    <button class="submit-button" onclick="checkAnswer('q20', 'C')">Submit Answer</button>
+                    <p class="result" id="result20"></p>
+                </div>
+
+                <button class="submit-button" onclick="showTotalScore()">Total Score</button>
+                <p id="totalScore"></p>
+                <p id="scoreMessage"></p>
+        
+            </div>
         </section>
 
     </main>
@@ -1224,6 +1862,47 @@ switch (expression) {
                 toggleGoToTopButton();
             };
         });
+
+
+        //Function for Quiz
+        var correctAnswers = 0;
+        var totalQuestions = 20;  // Update this variable with the total number of questions
+
+        function checkAnswer(questionId, correctAnswer) {
+            var selectedOption = document.querySelector('input[name="' + questionId + '"]:checked');
+            var resultElement = document.getElementById('result' + questionId.slice(1));
+
+            if (selectedOption) {
+                var userAnswer = selectedOption.value;
+
+                if (userAnswer === correctAnswer) {
+                    resultElement.innerText = 'Correct!';
+                    resultElement.classList.add('correct');
+                    resultElement.classList.remove('incorrect'); // Remove incorrect class if present
+                    correctAnswers++;
+                } else {
+                    resultElement.innerText = 'Incorrect. The correct answer is ' + correctAnswer;
+                    resultElement.classList.add('incorrect');
+                    resultElement.classList.remove('correct'); // Remove correct class if present
+                }
+            } else {
+                alert('Please select an answer before submitting.');
+            }
+        }
+
+        function showTotalScore() {
+            var totalScoreElement = document.getElementById('totalScore');
+            var scoreMessageElement = document.getElementById('scoreMessage');
+            
+            totalScoreElement.innerText = 'Total Score: ' + correctAnswers + ' out of ' + totalQuestions;
+
+            if (correctAnswers < 15) {
+                scoreMessageElement.innerText = '🥺 Please Retry after going through the concepts once again!';
+            } else {
+                scoreMessageElement.innerText = '👍🏻 Great Work!';
+            }
+        }
+
 
         // Function to scroll to the top of the page
         function goToTop() {
