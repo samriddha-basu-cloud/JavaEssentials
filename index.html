@@ -1890,10 +1890,36 @@ public int factorial(int n) {
             }
         }
 
+        function resetQuiz() {
+            // Reset selected options and result messages for all questions
+            for (var i = 1; i <= totalQuestions; i++) {
+                var questionId = 'q' + i;
+                var options = document.querySelectorAll('input[name="' + questionId + '"]');
+                var resultElement = document.getElementById('result' + i);
+
+                // Uncheck all radio buttons
+                options.forEach(function (option) {
+                    option.checked = false;
+                });
+
+                // Clear result messages
+                resultElement.innerText = '';
+                resultElement.classList.remove('correct', 'incorrect');
+            }
+
+            // Reset total score and correct answers
+            correctAnswers = 0;
+            var totalScoreElement = document.getElementById('totalScore');
+            var scoreMessageElement = document.getElementById('scoreMessage');
+
+            totalScoreElement.innerText = '';
+            scoreMessageElement.innerText = '';
+        }
+
         function showTotalScore() {
             var totalScoreElement = document.getElementById('totalScore');
             var scoreMessageElement = document.getElementById('scoreMessage');
-            
+
             totalScoreElement.innerText = 'Total Score: ' + correctAnswers + ' out of ' + totalQuestions;
 
             if (correctAnswers < 15) {
@@ -1901,6 +1927,9 @@ public int factorial(int n) {
             } else {
                 scoreMessageElement.innerText = '👍🏻 Great Work!';
             }
+
+            // Reset the quiz after displaying the total score
+            setTimeout(resetQuiz, 5000);
         }
 
 
