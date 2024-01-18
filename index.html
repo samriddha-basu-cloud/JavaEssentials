@@ -1879,7 +1879,9 @@ public int factorial(int n) {
                     resultElement.innerText = 'Correct!';
                     resultElement.classList.add('correct');
                     resultElement.classList.remove('incorrect'); // Remove incorrect class if present
-                    correctAnswers++;
+                    if (correctAnswers < totalQuestions) { // Ensure correctAnswers doesn't exceed totalQuestions
+                        correctAnswers++;
+                    }
                 } else {
                     resultElement.innerText = 'Incorrect. The correct answer is ' + correctAnswer;
                     resultElement.classList.add('incorrect');
